@@ -1,0 +1,729 @@
+dbus-send --session --print-reply --dest=com.actia.platform. system /com/actia/platform/system/power com.actia.platform.system.power.UpgradeM ode
+method return sender=:1.12 -> dest=:1.22 reply_serial=2
+root@tgur-access:~# watchdog watchdog0: watchdog did not stop!
+watchdog watchdog0: watchdog did not stop!
+Restarting system.
+
+
+U-Boot 2014.07 (Mar 08 2018 - 11:03:39)
+
+CPU:   Freescale i.MX6SOLO rev1.3 at 792 MHz
+Reset cause: POR
+Board: TGU-R Access-mx6solo
+Ver:   ACTIA-Pamela-
+DRAM:  512 MiB
+NAND:  256 MiB
+SF: Detected W25Q256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
+In:    serial
+Out:   serial
+Err:   serial
+Normal Boot
+Net:   FEC [PRIME]
+Hit any key to stop autoboot:  0 
+020cc068: 00000001                               ....
+------START UPDATE DISTRIBUTION------
+SF: Detected W25Q256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
+SF: 131072 bytes @ 0xb40000 Read: OK
+SF: 4063232 bytes @ 0xb60000 Read: OK
+SF: 9721152 bytes @ 0xf40000 Read: OK
+## Booting kernel from Legacy Image at 10007fc0 ...
+   Image Name:   Linux-3.10.17-rt12+pamela-dual-l
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    3208472 Bytes = 3.1 MiB
+   Load Address: 10008000
+   Entry Point:  10008000
+   Authenticate image from DDR location 0x10007fc0 ... Check CSF for Write Data command before authenticating image
+OK
+
+Secure boot disabled
+
+HAB Configuration: 0xf0, HAB State: 0x66
+No HAB Events Found!
+
+   Verifying Checksum ... OK
+## Loading init Ramdisk from Legacy Image at 19000000 ...
+   Image Name:   tgur-access-image-update-tgur-ac
+   Image Type:   ARM Linux RAMDisk Image (gzip compressed)
+   Data Size:    9721088 Bytes = 9.3 MiB
+   Load Address: 19000000
+   Entry Point:  19000000
+   Verifying Checksum ... OK
+## Flattened Device Tree blob at 18000000
+   Booting using the fdt blob at 0x18000000
+   Authenticate image from DDR location 0x18000000 ... Check CSF for Write Data command before authenticating image
+OK
+
+Secure boot disabled
+
+HAB Configuration: 0xf0, HAB State: 0x66
+No HAB Events Found!
+
+   XIP Kernel Image ... OK
+   Using Device Tree in place at 18000000, end 1800dbdc
+
+Starting kernel ...
+
+Booting Linux on physical CPU 0x0
+Initializing cgroup subsys cpuset
+Initializing cgroup subsys cpu
+Initializing cgroup subsys cpuacct
+Linux version 3.10.17-rt12+pamela-dual-lite-4.0.1+g6860969 (actia@22c4c2f051cc) (gcc version 4.8.2 (GCC) ) #1 PREEMPT RT Thu Mar 8 10:36:20 UTC 2018
+CPU: ARMv7 Processor [412fc09a] revision 10 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+Machine: Freescale i.MX6 Quad/DualLite (Device Tree), model: Pamela TGUR Access i.MX6 Solo Board
+cma: CMA: reserved 32 MiB at 2e000000
+Memory policy: ECC disabled, Data cache writeback
+------------[ cut here ]------------
+WARNING: at arch/arm/kernel/devtree.c:147 arm_dt_init_cpu_maps+0x11c/0x1a4()
+DT /cpu 2 nodes greater than max cores 1, capping them
+Modules linked in:
+CPU: 0 PID: 0 Comm: swapper Not tainted 3.10.17-rt12+pamela-dual-lite-4.0.1+g6860969 #1
+[<80013880>] (unwind_backtrace+0x0/0x134) from [<80011dd0>] (show_stack+0x10/0x14)
+[<80011dd0>] (show_stack+0x10/0x14) from [<80026d34>] (warn_slowpath_common+0x54/0x68)
+[<80026d34>] (warn_slowpath_common+0x54/0x68) from [<80026d78>] (warn_slowpath_fmt+0x30/0x40)
+[<80026d78>] (warn_slowpath_fmt+0x30/0x40) from [<805a64dc>] (arm_dt_init_cpu_maps+0x11c/0x1a4)
+[<805a64dc>] (arm_dt_init_cpu_maps+0x11c/0x1a4) from [<805a5ea4>] (setup_arch+0x644/0x69c)
+[<805a5ea4>] (setup_arch+0x644/0x69c) from [<805a2798>] (start_kernel+0x7c/0x34c)
+[<805a2798>] (start_kernel+0x7c/0x34c) from [<10008070>] (0x10008070)
+---[ end trace 0000000000000001 ]---
+CPU: All CPU(s) started in SVC mode.
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttymxc0,115200
+PID hash table entries: 2048 (order: 1, 8192 bytes)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+allocated 3670016 bytes of page_cgroup
+please try 'cgroup_disable=memory' option if you don't want memory cgroups
+Memory: 512MB = 512MB total
+Memory: 467060k/467060k available, 57228k reserved, 0K highmem
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+    vmalloc : 0xa0800000 - 0xff000000   (1512 MB)
+    lowmem  : 0x80000000 - 0xa0000000   ( 512 MB)
+    modules : 0x7f000000 - 0x80000000   (  16 MB)
+      .text : 0x80008000 - 0x805a145c   (5734 kB)
+      .init : 0x805a2000 - 0x805d1e94   ( 192 kB)
+      .data : 0x805d2000 - 0x80616730   ( 274 kB)
+       .bss : 0x80616730 - 0x8067c810   ( 409 kB)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+NR_IRQS:16 nr_irqs:16 16
+L310 cache controller enabled
+l2x0: 16 ways, CACHE_ID 0x410000c8, AUX_CTRL 0x32050000, Cache size: 524288 B
+sched_clock: 32 bits at 3000kHz, resolution 333ns, wraps every 1431655ms
+CPU identified as i.MX6DL, silicon rev 1.3
+Calibrating delay loop... 789.70 BogoMIPS (lpj=3948544)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 512
+Initializing cgroup subsys memory
+Initializing cgroup subsys devices
+Initializing cgroup subsys freezer
+Initializing cgroup subsys blkio
+Initializing cgroup subsys perf_event
+CPU: Testing write buffer coherency: ok
+Setting up static identity map for 0x80427650 - 0x804276a8
+devtmpfs: initialized
+pinctrl core: initialized pinctrl subsystem
+regulator-dummy: no parameters
+NET: Registered protocol family 16
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+Use WDOG1 as reset source
+syscon 20c8000.anatop: regmap [mem 0x020c8000-0x020c8fff] registered
+vdd1p1: 800 <--> 1375 mV at 1125 mV 
+vdd3p0: 2800 <--> 3150 mV at 3000 mV 
+vdd2p5: 2000 <--> 2750 mV at 2425 mV 
+cpu: 725 <--> 1450 mV at 1150 mV 
+vddpu: 725 <--> 1450 mV at 1150 mV 
+vddsoc: 725 <--> 1450 mV at 1175 mV 
+syscon 20e0000.iomuxc-gpr: regmap [mem 0x020e0000-0x020e0037] registered
+syscon 21bc000.ocotp-ctrl: regmap [mem 0x021bc000-0x021bffff] registered
+hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.
+hw-breakpoint: maximum watchpoint size is 4 bytes.
+imx6dl-pinctrl 20e0000.iomuxc: initialized IMX pinctrl driver
+bio: create slab <bio-0> at 0
+mxs-dma 110000.dma-apbh: initialized
+usb_otg_vbus: 5000 mV 
+usb_gsm_vbus: 5000 mV 
+3P3V: 3300 mV 
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+i2c i2c-0: IMX I2C adapter registered
+i2c i2c-1: IMX I2C adapter registered
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Switching to clocksource mxc_timer1
+NET: Registered protocol family 2
+TCP established hash table entries: 4096 (order: 3, 32768 bytes)
+TCP bind hash table entries: 4096 (order: 4, 98304 bytes)
+TCP: Hash tables configured (established 4096 bind 4096)
+TCP: reno registered
+UDP hash table entries: 256 (order: 2, 16384 bytes)
+UDP-Lite hash table entries: 256 (order: 2, 16384 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Trying to unpack rootfs image as initramfs...
+Freeing initrd memory: 9488K (89001000 - 89945000)
+hw perfevents: enabled with ARMv7 Cortex-A9 PMU driver, 7 counters available
+pureg-dummy: no parameters
+Bus freq driver module loaded
+VFS: Disk quotas dquot_6.5.2
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+NFS: Registering the id_resolver key type
+Key type id_resolver registered
+Key type id_legacy registered
+msgmni has been set to 994
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+spicom init
+/proc/actia/ created
+spicom initialized
+router_init
+router_initialized
+imx-weim 21b8000.weim: WEIM driver registered.
+imx-sdma 20ec000.sdma: no iram assigned, using external mem
+imx-sdma 20ec000.sdma: initialized
+imx-sdma 20ec000.sdma: loaded firmware 1.1
+pfuze100-regulator 0-0008: Full lay: 2, Metal lay: 1
+pfuze100-regulator 0-0008: FAB: 0, FIN: 1
+SW1AB: 300 <--> 1875 mV at 1225 mV normal standby
+SW1C: at 1225 mV 
+SW2: 800 <--> 3300 mV at 3300 mV normal standby
+SW3A: 400 <--> 1975 mV at 1350 mV normal standby
+SW3B: 800 <--> 1950 mV at 3300 mV normal standby
+SW4: at 400 mV 
+SWBST: at 5000 mV 
+VSNVS: at 3000 mV 
+VREFDDR: 750 mV normal standby
+VGEN1: at 1200 mV 
+VGEN2: at 1200 mV 
+VGEN3: at 1800 mV 
+VGEN4: 1800 <--> 3300 mV at 1800 mV normal standby
+VGEN5: 1800 <--> 3300 mV at 3100 mV normal standby
+VGEN6: 1800 <--> 3300 mV at 2500 mV normal standby
+Serial: IMX driver
+2020000.serial: ttymxc0 at MMIO 0x2020000 (irq = 58) is a IMX
+console [ttymxc0] enabled
+21e8000.serial: ttymxc1 at MMIO 0x21e8000 (irq = 59) is a IMX
+21ec000.serial: ttymxc2 at MMIO 0x21ec000 (irq = 60) is a IMX
+21f0000.serial: ttymxc3 at MMIO 0x21f0000 (irq = 61) is a IMX
+21f4000.serial: ttymxc4 at MMIO 0x21f4000 (irq = 62) is a IMX
+brd: module loaded
+loop: module loaded
+nand: device found, Manufacturer ID: 0x2c, Chip ID: 0xda
+nand: Micron MT29F2G08ABAEAH4
+nand: 256MiB, SLC, page size: 2048, OOB size: 64
+gpmi-nand 112000.gpmi-nand: enable the asynchronous EDO mode 5
+Scanning device for bad blocks
+2 ofpart partitions found on MTD device gpmi-nand
+Creating 2 MTD partitions on "gpmi-nand":
+0x000000000000-0x00000f600000 : "nandfs"
+0x00000f600000-0x000010000000 : "nandkernel"
+gpmi-nand 112000.gpmi-nand: driver registered.
+spi_imx 2008000.ecspi: sdma enabled
+actia_spicom spi32766.0: probed in rx mode, speed=12000000, max frame size=384, bits per word=16
+spi_imx 2008000.ecspi: probed
+spi_imx 200c000.ecspi: sdma enabled
+actia_spicom spi32765.0: probed in tx mode, speed=12000000, max frame size=384, bits per word=16
+spi_imx 200c000.ecspi: probed
+m25p80 spi32764.0: found w25q256, expected mx25l25635e
+m25p80 spi32764.0: w25q256 (32768 Kbytes)
+12 ofpart partitions found on MTD device spi32764.0
+Creating 12 MTD partitions on "spi32764.0":
+0x000000000000-0x0000000c0000 : "uboot"
+0x0000000c0000-0x0000000d0000 : "env1"
+0x0000000d0000-0x0000000e0000 : "env2"
+0x0000000e0000-0x0000000f0000 : "eva1"
+0x0000000f0000-0x000000100000 : "eva2"
+0x000000100000-0x000000120000 : "dtb1"
+0x000000120000-0x000000620000 : "kernel1"
+0x000000620000-0x000000640000 : "dtb2"
+0x000000640000-0x000000b40000 : "kernel2"
+0x000000b40000-0x000000b60000 : "dtbupdate"
+0x000000b60000-0x000000f40000 : "kernelupdate"
+0x000000f40000-0x000002000000 : "rootfsupdate"
+spi_imx 2010000.ecspi: probed
+spi_imx 2014000.ecspi: probed
+libphy: Fixed MDIO Bus: probed
+tun: Universal TUN/TAP device driver, 1.6
+tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+CAN device driver interface
+actiacan netdevice driver
+actiacan can.18: actiacan probe 
+actiacan can.18: probe-> OK
+actiacan can.19: actiacan probe 
+actiacan can.19: probe-> OK
+bcm_8950x_init: DSA mode disabled
+bcm_8950x_init: Found no node compatible with brcm,bcm8950x!
+libphy: fec_enet_mii_bus: probed
+fec 2188000.ethernet eth0: registered PHC device 0
+usbcore: registered new interface driver qmi_wwan
+usbcore: registered new interface driver cdc_wdm
+snvs_rtc 20cc034.snvs-rtc-lp: rtc core: registered 20cc034.snvs-rtc-lp as rtc0
+Driver for 1-wire Dallas network protocol.
+device-mapper: uevent: version 1.0.3
+device-mapper: ioctl: 4.24.0-ioctl (2013-01-15) initialised: dm-devel@redhat.com
+cpuidle: using governor ladder
+leds-gpio gpio-leds.20: pins are not configured from the driver
+Netfilter messages via NETLINK v0.30.
+nfnl_acct: registering with nfnetlink.
+nf_conntrack version 0.5.0 (7958 buckets, 31832 max)
+ctnetlink v0.93: registering with nfnetlink.
+NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+xt_time: kernel timezone is -0000
+ip_tables: (C) 2000-2006 Netfilter Core Team
+ipt_CLUSTERIP: ClusterIP Version 0.8 loaded successfully
+arp_tables: (C) 2002 David S. Miller
+TCP: cubic registered
+NET: Registered protocol family 10
+NET: Registered protocol family 17
+Bridge firewalling registered
+can: controller area network core (rev 20120528 abi 9)
+NET: Registered protocol family 29
+can: raw protocol (rev 20120528)
+can: broadcast manager protocol (rev 20120528 t)
+can: netlink gateway (rev 20130117) max_hops=1
+can: spi sraw protocol (rev 20120528)
+can: actia broadcast manager protocol (rev 20120528 t)
+can: sisotp protocol (rev 20130731 alpha)
+can: SAE J1939-Actia
+8021q: 802.1Q VLAN Support v1.8
+Key type dns_resolver registered
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4
+Registering SWP/SWPB emulation handler
+SW4: disabling
+SW1C: disabling
+vddpu: disabling
+snvs_rtc 20cc034.snvs-rtc-lp: setting system clock to 2000-01-01 00:46:32 UTC (946687592)
+Freeing unused kernel memory: 188K (805a2000 - 805d1000)
+Update distribution V2.3
+Mounting filesystem
+mkdir: can't create directory '/dev/shm': File exists
+mkdir: can't create directory '/dev/pts': File exists
+mount: mounting none on /dev failed: Device or resource busy
+mkdir: can't create directory '/run/lock': File exists
+Loading modules
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+platform 2184000.usb: Driver imx_usb requests probe deferral
+platform 2184200.usb: Driver imx_usb requests probe deferral
+sdhci: Secure Digital Host Controller Interface driver
+sdhci: Copyright(c) Pierre Ossman
+sdhci-pltfm: SDHCI platform and OF driver helper
+sdhci-esdhc-imx 2190000.usdhc: could not get ultra high speed state, work on normal mode
+mmc0: no vqmmc regulator found
+mmc0: SDHCI controller on 2190000.usdhc [2190000.usdhc] using ADMA
+sdhci-esdhc-imx 2198000.usdhc: could not get ultra high speed state, work on normal mode
+mmc1: no vqmmc regulator found
+platform 2184000.usb: Driver imx_usb requests probe deferral
+platform 2184200.usb: Driver imx_usb requests probe deferral
+mmc1: no vmmc regulator found
+mmc1: SDHCI controller on 2198000.usdhc [2198000.usdhc] using DMA
+platform 2184000.usb: Driver imx_usb requests probe deferral
+platform 2184200.usb: Driver imx_usb requests probe deferral
+modprobe: module m25p80 not found in modules.dep
+SCSI subsystem initialized
+usbcore: registered new interface driver usb-storage
+usbcore: registered new interface driver usbserial
+usbcore: registered new interface driver usbserial_generic
+usbserial: USB Serial support registered for generic
+usbcore: registered new interface driver option
+usbserial: USB Serial support registered for GSM modem (1-port)
+usbcore: registered new interface driver cdc_acm
+cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+Launching watchdog
+ci_hdrc ci_hdrc.1: EHCI Host Controller
+ci_hdrc ci_hdrc.1: new USB bus registered, assigned bus number 1
+ci_hdrc ci_hdrc.1: USB 2.0 started, EHCI 1.00
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+Watchdog launched
+Set USB OTG mode
+ci_hdrc ci_hdrc.0: EHCI Host Controller
+ci_hdrc ci_hdrc.0: new USB bus registered, assigned bus number 2
+ci_hdrc ci_hdrc.0: USB 2.0 started, EHCI 1.00
+hub 2-0:1.0: USB hub found
+mmc1: unrecognised EXT_CSD revision 8
+mmc1: BKOPS_EN bit is not set
+hub 2-0:1.0: 1 port detected
+mmc1: new high speed DDR MMC card at address 0001
+mmcblk0: mmc1:0001 W62704 3.53 GiB 
+mmcblk0boot0: mmc1:0001 W62704 partition 1 2.00 MiB
+mmcblk0boot1: mmc1:0001 W62704 partition 2 2.00 MiB
+mmcblk0rpmb: mmc1:0001 W62704 partition 3 512 KiB
+ mmcblk0: p1 p2 p3 p4 < p5 p6 p7 >
+ mmcblk0boot1: unknown partition table
+ mmcblk0boot0: unknown partition table
+Sync cpu management
+-----Synchro CPU OK
+Get parameters
+SNVS LPGPR = 2
+export Nb_try=2
+Setting calculator state
+Processing CALCULATOR_STATE: TO_UPDATE
+EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+-----OK -> Mount /dev/mmcblk0p2 /media/actia/downloaded-images
+EXT4-fs (mmcblk0p1): mounted filesystem with ordered data mode. Opts: (null)
+-----OK -> Mount /dev/mmcblk0p1 /media/actia/verified-images
+/bin/start-update.sh: line 1509: can't open /media/actia/downloaded-images/Versions_Dwnl.ini: no such file
+UBI: attaching mtd0 to ubi0
+UBI: scanning is finished
+UBI: attached mtd0 (name "nandfs", size 246 MiB) to ubi0
+UBI: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+UBI: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+UBI: VID header offset: 2048 (aligned 2048), data offset: 4096
+UBI: good PEBs: 1968, bad PEBs: 0, corrupted PEBs: 0
+UBI: user volume: 3, internal volumes: 1, max. volumes count: 128
+UBI: max/mean erase counter: 108/75, WL threshold: 4096, image sequence number: 2321643390
+UBI: available PEBs: 0, total reserved PEBs: 1968, PEBs reserved for bad PEB handling: 40
+UBI: background thread "ubi_bgt0d" started, PID 383
+UBI device number 0, total 1968 LEBs (249888768 bytes, 238.3 MiB), UBI: attaching mtd1 to ubi1
+available 0 LEBs (0 bytes), LEB susb 2-1: new high-speed USB device number 2 using ci_hdrc
+ize 126976 bytes (124.0 KiB)
+UBI: scanning is finished
+UBI: attached mtd1 (name "nandkernel", size 10 MiB) to ubi1
+UBI: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+UBI: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+UBI: VID header offset: 2048 (aligned 2048), data offset: 4096
+UBI: good PEBs: 80, bad PEBs: 0, corrupted PEBs: 0
+UBI: user volume: 1, internal volumes: 1, max. volumes count: 128
+UBI: max/mean erase counter: 133/92, WL threshold: 4096, image sequence number: 975366678
+UBI: available PEBs: 0, total reserved PEBs: 80, PEBs reserved for bad PEB handling: 40
+UBI: background thread "ubi_bgt1d" started, PID 385
+UBI device number 1, total 80 LEBs (10158080 bytes, 9.7 MiB), available 0 LEBs (0 bytes), LEB size 126976 bytes (124.0 KiB)
+Apply versions from: /media/actia/verified-images/UpdateVersion
+EXT4-fs (mmcblk0p5): mounted filesystem with ordered data mode. Opts: (null)
+-----OK -> Mount /dev/mmcblk0p5 /media/actia/parameters-part
+CONFIG_FILE: /media/actia/verified-images/UpdateVersion
+UPDATE_MODE: 
+MODE: WRITE
+ID: F180
+VERSION: MC45LjMA
+usb-storage 2-1:1.0: USB Mass Storage device detected
+scsi0 : usb-storage 2-1:1.0
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F180 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F187
+VERSION: MDAwMDAwMA==
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F187 on CCPU
+0
+Writing ID: F187 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F188
+VERSION: MDAwMDAwMA==
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F188 on CCPU
+0
+Writing ID: F188 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F191
+VERSION: MDAwMDAwMA==
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F191 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F192
+VERSION: QUM5MjIxNTYAAAAAAAAAAAAAAAA=
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F192 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F193
+VERSION: MC45LjIA
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F193 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F197
+VERSION: VEdVUi1BQ0NFU1MAAAAAAAAAAAA=
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F197 on CCPU
+0
+Writing ID: F197 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F1A5
+VERSION: MjQ0MDIzNA==
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F1A5 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F1B0
+VERSION: MC4wLjAuMAAAAAAAAAAAAAAAAAA=
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F1B0 on CCPU
+0
+Writing ID: F1B0 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F1F0
+VERSION: BDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F1F0 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F1F1
+VERSION: MDAwMDAwMA=
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F1F1 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F1F2
+VERSION: UjAwMQo=
+scsi 0:0:0:0: Direct-Access                               8.07 PQ: 0 ANSI: 4
+sd 0:0:0:0: [sda] 3788800 512-byte logical blocks: (1.93 GB/1.80 GiB)
+sd 0:0:0:0: [sda] Write Protect is off
+System_State: TO_TEST
+CONFIG_FILE: sd 0:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+/media/actia/parameters-part/Versions_System
+Writing ID: F1F2 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F1F3
+VERSION: OTIyMTU2AA==
+ sda: sda1
+sd 0:0:0:0: [sda] Attached SCSI removable disk
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F1F3 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F1F4
+VERSION: MC45LjIA
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F1F4 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: F1F5
+VERSION: MC45LjMA
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: F1F5 from HCPU
+-----OK -> 
+MODE: WRITE
+ID: FD00
+VERSION: AQ==
+System_State: TO_TEST
+CONFIG_FILE: /media/actia/parameters-part/Versions_System
+Writing ID: FD00 from HCPU
+-----OK -> 
+-----OK -> Versions written
+Updating system
+flash NOR part:/dev/mtd8 with file:/media/actia/verified-images/uImage-tgur-access-c1.bin.signed
+Erasing blocks: 0/785 (0%)Erasing blocks: 1/785 (0%)Erasing blocks: 2/785 (0%)Erasing blocks: 3/785 (0%)Erasing blocks: 4/785 (0%)Erasing blocks: 5/785 (0%)Erasing blocks: 6/785 (0%)Erasing blocks: 7/785 (0%)Erasing blocks: 8/785 (1%)Erasing blocks: 9/785 (1%)Erasing blocks: 10/785 (1%)Erasing blocks: 11/785 (1%)Erasing blocks: 12/785 (1%)Erasing blocks: 13/785 (1%)Erasing blocks: 14/785 (1%)Erasing blocks: 15/785 (1%)Erasing blocks: 16/785 (2%)Erasing blocks: 17/785 (2%)Erasing blocks: 18/785 (2%)Erasing blocks: 19/785 (2%)Erasing blocks: 20/785 (2%)Erasing blocks: 21/785 (2%)Erasing blocks: 22/785 (2%)Erasing blocks: 23/785 (2%)Erasing blocks: 24/785 (3%)Erasing blocks: 25/785 (3%)Erasing blocks: 26/785 (3%)Erasing blocks: 27/785 (3%)Erasing blocks: 28/785 (3%)Erasing blocks: 29/785 (3%)Erasing blocks: 30/785 (3%)Erasing blocks: 31/785 (3%)Erasing blocks: 32/785 (4%)Erasing blocks: 33/785 (4%)Erasing blocks: 34/785 (4%)Erasing blocks: 35/785 (4%)Erasing blocks: 36/785 (4%)Erasing blocks: 37/785 (4%)Erasing blocks: 38/785 (4%)Erasing blocks: 39/785 (4%)Erasing blocks: 40/785 (5%)Erasing blocks: 41/785 (5%)Erasing blocks: 42/785 (5%)Erasing blocks: 43/785 (5%)Erasing blocks: 44/785 (5%)Erasing blocks: 45/785 (5%)Erasing blocks: 46/785 (5%)Erasing blocks: 47/785 (5%)Erasing blocks: 48/785 (6%)Erasing blocks: 49/785 (6%)Erasing blocks: 50/785 (6%)Erasing blocks: 51/785 (6%)Erasing blocks: 52/785 (6%)Erasing blocks: 53/785 (6%)Erasing blocks: 54/785 (6%)Erasing blocks: 55/785 (7%)Erasing blocks: 56/785 (7%)Erasing blocks: 57/785 (7%)Erasing blocks: 58/785 (7%)Erasing blocks: 59/785 (7%)Erasing blocks: 60/785 (7%)Erasing blocks: 61/785 (7%)Erasing blocks: 62/785 (7%)Erasing blocks: 63/785 (8%)Erasing blocks: 64/785 (8%)Erasing blocks: 65/785 (8%)Erasing blocks: 66/785 (8%)Erasing blocks: 67/785 (8%)Erasing blocks: 68/785 (8%)Erasing blocks: 69/785 (8%)Erasing blocks: 70/785 (8%)Erasing blocks: 71/785 (9%)Erasing blocks: 72/785 (9%)Erasing blocks: 73/785 (9%)Erasing blocks: 74/785 (9%)Erasing blocks: 75/785 (9%)Erasing blocks: 76/785 (9%)Erasing blocks: 77/785 (9%)Erasing blocks: 78/785 (9%)Erasing blocks: 79/785 (10%)Erasing blocks: 80/785 (10%)Erasing blocks: 81/785 (10%)Erasing blocks: 82/785 (10%)Erasing blocks: 83/785 (10%)Erasing blocks: 84/785 (10%)Erasing blocks: 85/785 (10%)Erasing blocks: 86/785 (10%)Erasing blocks: 87/785 (11%)Erasing blocks: 88/785 (11%)Erasing blocks: 89/785 (11%)Erasing blocks: 90/785 (11%)Erasing blocks: 91/785 (11%)Erasing blocks: 92/785 (11%)Erasing blocks: 93/785 (11%)Erasing blocks: 94/785 (11%)Erasing blocks: 95/785 (12%)Erasing blocks: 96/785 (12%)Erasing blocks: 97/785 (12%)Erasing blocks: 98/785 (12%)Erasing blocks: 99/785 (12%)Erasing blocks: 100/785 (12%)Erasing blocks: 101/785 (12%)Erasing blocks: 102/785 (12%)Erasing blocks: 103/785 (13%)Erasing blocks: 104/785 (13%)Erasing blocks: 105/785 (13%)Erasing blocks: 106/785 (13%)Erasing blocks: 107/785 (13%)Erasing blocks: 108/785 (13%)Erasing blocks: 109/785 (13%)Erasing blocks: 110/785 (14%)Erasing blocks: 111/785 (14%)Erasing blocks: 112/785 (14%)Erasing blocks: 113/785 (14%)Erasing blocks: 114/785 (14%)Erasing blocks: 115/785 (14%)Erasing blocks: 116/785 (14%)Erasing blocks: 117/785 (14%)Erasing blocks: 118/785 (15%)Erasing blocks: 119/785 (15%)Erasing blocks: 120/785 (15%)Erasing blocks: 121/785 (15%)Erasing blocks: 122/785 (15%)Erasing blocks: 123/785 (15%)Erasing blocks: 124/785 (15%)Erasing blocks: 125/785 (15%)Erasing blocks: 126/785 (16%)Erasing blocks: 127/785 (16%)Erasing blocks: 128/785 (16%)Erasing blocks: 129/785 (16%)Erasing blocks: 130/785 (16%)Erasing blocks: 131/785 (16%)Erasing blocks: 132/785 (16%)Erasing blocks: 133/785 (16%)Erasing blocks: 134/785 (17%)Erasing blocks: 135/785 (17%)Erasing blocks: 136/785 (17%)Erasing blocks: 137/785 (17%)Erasing blocks: 138/785 (17%)Erasing blocks: 139/785 (17%)Erasing blocks: 140/785 (17%)Erasing blocks: 141/785 (17%)Erasing blocks: 142/785 (18%)Erasing blocks: 143/785 (18%)Erasing blocks: 144/785 (18%)Erasing blocks: 145/785 (18%)Erasing blocks: 146/785 (18%)Erasing blocks: 147/785 (18%)Erasing blocks: 148/785 (18%)Erasing blocks: 149/785 (18%)Erasing blocks: 150/785 (19%)Erasing blocks: 151/785 (19%)Erasing blocks: 152/785 (19%)Erasing blocks: 153/785 (19%)Erasing blocks: 154/785 (19%)Erasing blocks: 155/785 (19%)Erasing blocks: 156/785 (19%)Erasing blocks: 157/785 (20%)Erasing blocks: 158/785 (20%)Erasing blocks: 159/785 (20%)Erasing blocks: 160/785 (20%)Erasing blocks: 161/785 (20%)Erasing blocks: 162/785 (20%)Erasing blocks: 163/785 (20%)Erasing blocks: 164/785 (20%)Erasing blocks: 165/785 (21%)Erasing blocks: 166/785 (21%)Erasing blocks: 167/785 (21%)Erasing blocks: 168/785 (21%)Erasing blocks: 169/785 (21%)Erasing blocks: 170/785 (21%)Erasing blocks: 171/785 (21%)Erasing blocks: 172/785 (21%)Erasing blocks: 173/785 (22%)Erasing blocks: 174/785 (22%)Erasing blocks: 175/785 (22%)Erasing blocks: 176/785 (22%)Erasing blocks: 177/785 (22%)Erasing blocks: 178/785 (22%)Erasing blocks: 179/785 (22%)Erasing blocks: 180/785 (22%)Erasing blocks: 181/785 (23%)Erasing blocks: 182/785 (23%)Erasing blocks: 183/785 (23%)Erasing blocks: 184/785 (23%)Erasing blocks: 185/785 (23%)Erasing blocks: 186/785 (23%)Erasing blocks: 187/785 (23%)Erasing blocks: 188/785 (23%)Erasing blocks: 189/785 (24%)Erasing blocks: 190/785 (24%)Erasing blocks: 191/785 (24%)Erasing blocks: 192/785 (24%)Erasing blocks: 193/785 (24%)Erasing blocks: 194/785 (24%)Erasing blocks: 195/785 (24%)Erasing blocks: 196/785 (24%)Erasing blocks: 197/785 (25%)Erasing blocks: 198/785 (25%)Erasing blocks: 199/785 (25%)Erasing blocks: 200/785 (25%)Erasing blocks: 201/785 (25%)Erasing blocks: 202/785 (25%)Erasing blocks: 203/785 (25%)Erasing blocks: 204/785 (25%)Erasing blocks: 205/785 (26%)Erasing blocks: 206/785 (26%)Erasing blocks: 207/785 (26%)Erasing blocks: 208/785 (26%)Erasing blocks: 209/785 (26%)Erasing blocks: 210/785 (26%)Erasing blocks: 211/785 (26%)Erasing blocks: 212/785 (27%)Erasing blocks: 213/785 (27%)Erasing blocks: 214/785 (27%)Erasing blocks: 215/785 (27%)Erasing blocks: 216/785 (27%)Erasing blocks: 217/785 (27%)Erasing blocks: 218/785 (27%)Erasing blocks: 219/785 (27%)Erasing blocks: 220/785 (28%)Erasing blocks: 221/785 (28%)Erasing blocks: 222/785 (28%)Erasing blocks: 223/785 (28%)Erasing blocks: 224/785 (28%)Erasing blocks: 225/785 (28%)Erasing blocks: 226/785 (28%)Erasing blocks: 227/785 (28%)Erasing blocks: 228/785 (29%)Erasing blocks: 229/785 (29%)Erasing blocks: 230/785 (29%)Erasing blocks: 231/785 (29%)Erasing blocks: 232/785 (29%)Erasing blocks: 233/785 (29%)Erasing blocks: 234/785 (29%)Erasing blocks: 235/785 (29%)Erasing blocks: 236/785 (30%)Erasing blocks: 237/785 (30%)Erasing blocks: 238/785 (30%)Erasing blocks: 239/785 (30%)Erasing blocks: 240/785 (30%)Erasing blocks: 241/785 (30%)Erasing blocks: 242/785 (30%)Erasing blocks: 243/785 (30%)Erasing blocks: 244/785 (31%)Erasing blocks: 245/785 (31%)Erasing blocks: 246/785 (31%)Erasing blocks: 247/785 (31%)Erasing blocks: 248/785 (31%)Erasing blocks: 249/785 (31%)Erasing blocks: 250/785 (31%)Erasing blocks: 251/785 (31%)Erasing blocks: 252/785 (32%)Erasing blocks: 253/785 (32%)Erasing blocks: 254/785 (32%)Erasing blocks: 255/785 (32%)Erasing blocks: 256/785 (32%)Erasing blocks: 257/785 (32%)Erasing blocks: 258/785 (32%)Erasing blocks: 259/785 (32%)Erasing blocks: 260/785 (33%)Erasing blocks: 261/785 (33%)Erasing blocks: 262/785 (33%)Erasing blocks: 263/785 (33%)Erasing blocks: 264/785 (33%)Erasing blocks: 265/785 (33%)Erasing blocks: 266/785 (33%)Erasing blocks: 267/785 (34%)Erasing blocks: 268/785 (34%)Erasing blocks: 269/785 (34%)Erasing blocks: 270/785 (34%)Erasing blocks: 271/785 (34%)Erasing blocks: 272/785 (34%)Erasing blocks: 273/785 (34%)Erasing blocks: 274/785 (34%)Erasing blocks: 275/785 (35%)Erasing blocks: 276/785 (35%)Erasing blocks: 277/785 (35%)Erasing blocks: 278/785 (35%)Erasing blocks: 279/785 (35%)Erasing blocks: 280/785 (35%)Erasing blocks: 281/785 (35%)Erasing blocks: 282/785 (35%)Erasing blocks: 283/785 (36%)Erasing blocks: 284/785 (36%)Erasing blocks: 285/785 (36%)Erasing blocks: 286/785 (36%)Erasing blocks: 287/785 (36%)Erasing blocks: 288/785 (36%)Erasing blocks: 289/785 (36%)Erasing blocks: 290/785 (36%)Erasing blocks: 291/785 (37%)Erasing blocks: 292/785 (37%)Erasing blocks: 293/785 (37%)Erasing blocks: 294/785 (37%)Erasing blocks: 295/785 (37%)Erasing blocks: 296/785 (37%)Erasing blocks: 297/785 (37%)Erasing blocks: 298/785 (37%)Erasing blocks: 299/785 (38%)Erasing blocks: 300/785 (38%)Erasing blocks: 301/785 (38%)Erasing blocks: 302/785 (38%)Erasing blocks: 303/785 (38%)Erasing blocks: 304/785 (38%)Erasing blocks: 305/785 (38%)Erasing blocks: 306/785 (38%)Erasing blocks: 307/785 (39%)Erasing blocks: 308/785 (39%)Erasing blocks: 309/785 (39%)Erasing blocks: 310/785 (39%)Erasing blocks: 311/785 (39%)Erasing blocks: 312/785 (39%)Erasing blocks: 313/785 (39%)Erasing blocks: 314/785 (40%)Erasing blocks: 315/785 (40%)Erasing blocks: 316/785 (40%)Erasing blocks: 317/785 (40%)Erasing blocks: 318/785 (40%)Erasing blocks: 319/785 (40%)Erasing blocks: 320/785 (40%)Erasing blocks: 321/785 (40%)Erasing blocks: 322/785 (41%)Erasing blocks: 323/785 (41%)Erasing blocks: 324/785 (41%)Erasing blocks: 325/785 (41%)Erasing blocks: 326/785 (41%)Erasing blocks: 327/785 (41%)Erasing blocks: 328/785 (41%)Erasing blocks: 329/785 (41%)Erasing blocks: 330/785 (42%)Erasing blocks: 331/785 (42%)Erasing blocks: 332/785 (42%)Erasing blocks: 333/785 (42%)Erasing blocks: 334/785 (42%)Erasing blocks: 335/785 (42%)Erasing blocks: 336/785 (42%)Erasing blocks: 337/785 (42%)Erasing blocks: 338/785 (43%)Erasing blocks: 339/785 (43%)Erasing blocks: 340/785 (43%)Erasing blocks: 341/785 (43%)Erasing blocks: 342/785 (43%)Erasing blocks: 343/785 (43%)Erasing blocks: 344/785 (43%)Erasing blocks: 345/785 (43%)Erasing blocks: 346/785 (44%)Erasing blocks: 347/785 (44%)Erasing blocks: 348/785 (44%)Erasing blocks: 349/785 (44%)Erasing blocks: 350/785 (44%)Erasing blocks: 351/785 (44%)Erasing blocks: 352/785 (44%)Erasing blocks: 353/785 (44%)Erasing blocks: 354/785 (45%)Erasing blocks: 355/785 (45%)Erasing blocks: 356/785 (45%)Erasing blocks: 357/785 (45%)Erasing blocks: 358/785 (45%)Erasing blocks: 359/785 (45%)Erasing blocks: 360/785 (45%)Erasing blocks: 361/785 (45%)Erasing blocks: 362/785 (46%)Erasing blocks: 363/785 (46%)Erasing blocks: 364/785 (46%)Erasing blocks: 365/785 (46%)Erasing blocks: 366/785 (46%)Erasing blocks: 367/785 (46%)Erasing blocks: 368/785 (46%)Erasing blocks: 369/785 (47%)Erasing blocks: 370/785 (47%)Erasing blocks: 371/785 (47%)Erasing blocks: 372/785 (47%)Erasing blocks: 373/785 (47%)Erasing blocks: 374/785 (47%)Erasing blocks: 375/785 (47%)Erasing blocks: 376/785 (47%)Erasing blocks: 377/785 (48%)Erasing blocks: 378/785 (48%)Erasing blocks: 379/785 (48%)Erasing blocks: 380/785 (48%)Erasing blocks: 381/785 (48%)Erasing blocks: 382/785 (48%)Erasing blocks: 383/785 (48%)Erasing blocks: 384/785 (48%)Erasing blocks: 385/785 (49%)Erasing blocks: 386/785 (49%)Erasing blocks: 387/785 (49%)Erasing blocks: 388/785 (49%)Erasing blocks: 389/785 (49%)Erasing blocks: 390/785 (49%)Erasing blocks: 391/785 (49%)Erasing blocks: 392/785 (49%)Erasing blocks: 393/785 (50%)Erasing blocks: 394/785 (50%)Erasing blocks: 395/785 (50%)Erasing blocks: 396/785 (50%)Erasing blocks: 397/785 (50%)Erasing blocks: 398/785 (50%)Erasing blocks: 399/785 (50%)Erasing blocks: 400/785 (50%)Erasing blocks: 401/785 (51%)Erasing blocks: 402/785 (51%)Erasing blocks: 403/785 (51%)Erasing blocks: 404/785 (51%)Erasing blocks: 405/785 (51%)Erasing blocks: 406/785 (51%)Erasing blocks: 407/785 (51%)Erasing blocks: 408/785 (51%)Erasing blocks: 409/785 (52%)Erasing blocks: 410/785 (52%)Erasing blocks: 411/785 (52%)Erasing blocks: 412/785 (52%)Erasing blocks: 413/785 (52%)Erasing blocks: 414/785 (52%)Erasing blocks: 415/785 (52%)Erasing blocks: 416/785 (52%)Erasing blocks: 417/785 (53%)Erasing blocks: 418/785 (53%)Erasing blocks: 419/785 (53%)Erasing blocks: 420/785 (53%)Erasing blocks: 421/785 (53%)Erasing blocks: 422/785 (53%)Erasing blocks: 423/785 (53%)Erasing blocks: 424/785 (54%)Erasing blocks: 425/785 (54%)Erasing blocks: 426/785 (54%)Erasing blocks: 427/785 (54%)Erasing blocks: 428/785 (54%)Erasing blocks: 429/785 (54%)Erasing blocks: 430/785 (54%)Erasing blocks: 431/785 (54%)Erasing blocks: 432/785 (55%)Erasing blocks: 433/785 (55%)Erasing blocks: 434/785 (55%)Erasing blocks: 435/785 (55%)Erasing blocks: 436/785 (55%)Erasing blocks: 437/785 (55%)Erasing blocks: 438/785 (55%)Erasing blocks: 439/785 (55%)Erasing blocks: 440/785 (56%)Erasing blocks: 441/785 (56%)Erasing blocks: 442/785 (56%)Erasing blocks: 443/785 (56%)Erasing blocks: 444/785 (56%)Erasing blocks: 445/785 (56%)Erasing blocks: 446/785 (56%)Erasing blocks: 447/785 (56%)Erasing blocks: 448/785 (57%)Erasing blocks: 449/785 (57%)Erasing blocks: 450/785 (57%)Erasing blocks: 451/785 (57%)Erasing blocks: 452/785 (57%)Erasing blocks: 453/785 (57%)Erasing blocks: 454/785 (57%)Erasing blocks: 455/785 (57%)Erasing blocks: 456/785 (58%)Erasing blocks: 457/785 (58%)Erasing blocks: 458/785 (58%)Erasing blocks: 459/785 (58%)Erasing blocks: 460/785 (58%)Erasing blocks: 461/785 (58%)Erasing blocks: 462/785 (58%)Erasing blocks: 463/785 (58%)Erasing blocks: 464/785 (59%)Erasing blocks: 465/785 (59%)Erasing blocks: 466/785 (59%)Erasing blocks: 467/785 (59%)Erasing blocks: 468/785 (59%)Erasing blocks: 469/785 (59%)Erasing blocks: 470/785 (59%)Erasing blocks: 471/785 (60%)Erasing blocks: 472/785 (60%)Erasing blocks: 473/785 (60%)Erasing blocks: 474/785 (60%)Erasing blocks: 475/785 (60%)Erasing blocks: 476/785 (60%)Erasing blocks: 477/785 (60%)Erasing blocks: 478/785 (60%)Erasing blocks: 479/785 (61%)Erasing blocks: 480/785 (61%)Erasing blocks: 481/785 (61%)Erasing blocks: 482/785 (61%)Erasing blocks: 483/785 (61%)Erasing blocks: 484/785 (61%)Erasing blocks: 485/785 (61%)Erasing blocks: 486/785 (61%)Erasing blocks: 487/785 (62%)Erasing blocks: 488/785 (62%)Erasing blocks: 489/785 (62%)Erasing blocks: 490/785 (62%)Erasing blocks: 491/785 (62%)Erasing blocks: 492/785 (62%)Erasing blocks: 493/785 (62%)Erasing blocks: 494/785 (62%)Erasing blocks: 495/785 (63%)Erasing blocks: 496/785 (63%)Erasing blocks: 497/785 (63%)Erasing blocks: 498/785 (63%)Erasing blocks: 499/785 (63%)Erasing blocks: 500/785 (63%)Erasing blocks: 501/785 (63%)Erasing blocks: 502/785 (63%)Erasing blocks: 503/785 (64%)Erasing blocks: 504/785 (64%)Erasing blocks: 505/785 (64%)Erasing blocks: 506/785 (64%)Erasing blocks: 507/785 (64%)Erasing blocks: 508/785 (64%)Erasing blocks: 509/785 (64%)Erasing blocks: 510/785 (64%)Erasing blocks: 511/785 (65%)Erasing blocks: 512/785 (65%)Erasing blocks: 513/785 (65%)Erasing blocks: 514/785 (65%)Erasing blocks: 515/785 (65%)Erasing blocks: 516/785 (65%)Erasing blocks: 517/785 (65%)Erasing blocks: 518/785 (65%)Erasing blocks: 519/785 (66%)Erasing blocks: 520/785 (66%)Erasing blocks: 521/785 (66%)Erasing blocks: 522/785 (66%)Erasing blocks: 523/785 (66%)Erasing blocks: 524/785 (66%)Erasing blocks: 525/785 (66%)Erasing blocks: 526/785 (67%)Erasing blocks: 527/785 (67%)Erasing blocks: 528/785 (67%)Erasing blocks: 529/785 (67%)Erasing blocks: 530/785 (67%)Erasing blocks: 531/785 (67%)Erasing blocks: 532/785 (67%)Erasing blocks: 533/785 (67%)Erasing blocks: 534/785 (68%)Erasing blocks: 535/785 (68%)Erasing blocks: 536/785 (68%)Erasing blocks: 537/785 (68%)Erasing blocks: 538/785 (68%)Erasing blocks: 539/785 (68%)Erasing blocks: 540/785 (68%)Erasing blocks: 541/785 (68%)Erasing blocks: 542/785 (69%)Erasing blocks: 543/785 (69%)Erasing blocks: 544/785 (69%)Erasing blocks: 545/785 (69%)Erasing blocks: 546/785 (69%)Erasing blocks: 547/785 (69%)Erasing blocks: 548/785 (69%)Erasing blocks: 549/785 (69%)Erasing blocks: 550/785 (70%)Erasing blocks: 551/785 (70%)Erasing blocks: 552/785 (70%)Erasing blocks: 553/785 (70%)Erasing blocks: 554/785 (70%)Erasing blocks: 555/785 (70%)Erasing blocks: 556/785 (70%)Erasing blocks: 557/785 (70%)Erasing blocks: 558/785 (71%)Erasing blocks: 559/785 (71%)Erasing blocks: 560/785 (71%)Erasing blocks: 561/785 (71%)Erasing blocks: 562/785 (71%)Erasing blocks: 563/785 (71%)Erasing blocks: 564/785 (71%)Erasing blocks: 565/785 (71%)Erasing blocks: 566/785 (72%)Erasing blocks: 567/785 (72%)Erasing blocks: 568/785 (72%)Erasing blocks: 569/785 (72%)Erasing blocks: 570/785 (72%)Erasing blocks: 571/785 (72%)Erasing blocks: 572/785 (72%)Erasing blocks: 573/785 (72%)Erasing blocks: 574/785 (73%)Erasing blocks: 575/785 (73%)Erasing blocks: 576/785 (73%)Erasing blocks: 577/785 (73%)Erasing blocks: 578/785 (73%)Erasing blocks: 579/785 (73%)Erasing blocks: 580/785 (73%)Erasing blocks: 581/785 (74%)Erasing blocks: 582/785 (74%)Erasing blocks: 583/785 (74%)Erasing blocks: 584/785 (74%)Erasing blocks: 585/785 (74%)Erasing blocks: 586/785 (74%)Erasing blocks: 587/785 (74%)Erasing blocks: 588/785 (74%)Erasing blocks: 589/785 (75%)Erasing blocks: 590/785 (75%)Erasing blocks: 591/785 (75%)Erasing blocks: 592/785 (75%)Erasing blocks: 593/785 (75%)Erasing blocks: 594/785 (75%)Erasing blocks: 595/785 (75%)Erasing blocks: 596/785 (75%)Erasing blocks: 597/785 (76%)Erasing blocks: 598/785 (76%)Erasing blocks: 599/785 (76%)Erasing blocks: 600/785 (76%)Erasing blocks: 601/785 (76%)Erasing blocks: 602/785 (76%)Erasing blocks: 603/785 (76%)Erasing blocks: 604/785 (76%)Erasing blocks: 605/785 (77%)Erasing blocks: 606/785 (77%)Erasing blocks: 607/785 (77%)Erasing blocks: 608/785 (77%)Erasing blocks: 609/785 (77%)Erasing blocks: 610/785 (77%)Erasing blocks: 611/785 (77%)Erasing blocks: 612/785 (77%)Erasing blocks: 613/785 (78%)Erasing blocks: 614/785 (78%)Erasing blocks: 615/785 (78%)Erasing blocks: 616/785 (78%)Erasing blocks: 617/785 (78%)Erasing blocks: 618/785 (78%)Erasing blocks: 619/785 (78%)Erasing blocks: 620/785 (78%)Erasing blocks: 621/785 (79%)Erasing blocks: 622/785 (79%)Erasing blocks: 623/785 (79%)Erasing blocks: 624/785 (79%)Erasing blocks: 625/785 (79%)Erasing blocks: 626/785 (79%)Erasing blocks: 627/785 (79%)Erasing blocks: 628/785 (80%)Erasing blocks: 629/785 (80%)Erasing blocks: 630/785 (80%)Erasing blocks: 631/785 (80%)Erasing blocks: 632/785 (80%)Erasing blocks: 633/785 (80%)Erasing blocks: 634/785 (80%)Erasing blocks: 635/785 (80%)Erasing blocks: 636/785 (81%)Erasing blocks: 637/785 (81%)Erasing blocks: 638/785 (81%)Erasing blocks: 639/785 (81%)Erasing blocks: 640/785 (81%)Erasing blocks: 641/785 (81%)Erasing blocks: 642/785 (81%)Erasing blocks: 643/785 (81%)Erasing blocks: 644/785 (82%)Erasing blocks: 645/785 (82%)Erasing blocks: 646/785 (82%)Erasing blocks: 647/785 (82%)Erasing blocks: 648/785 (82%)Erasing blocks: 649/785 (82%)Erasing blocks: 650/785 (82%)Erasing blocks: 651/785 (82%)Erasing blocks: 652/785 (83%)Erasing blocks: 653/785 (83%)Erasing blocks: 654/785 (83%)Erasing blocks: 655/785 (83%)Erasing blocks: 656/785 (83%)Erasing blocks: 657/785 (83%)Erasing blocks: 658/785 (83%)Erasing blocks: 659/785 (83%)Erasing blocks: 660/785 (84%)Erasing blocks: 661/785 (84%)Erasing blocks: 662/785 (84%)Erasing blocks: 663/785 (84%)Erasing blocks: 664/785 (84%)Erasing blocks: 665/785 (84%)Erasing blocks: 666/785 (84%)Erasing blocks: 667/785 (84%)Erasing blocks: 668/785 (85%)Erasing blocks: 669/785 (85%)Erasing blocks: 670/785 (85%)Erasing blocks: 671/785 (85%)Erasing blocks: 672/785 (85%)Erasing blocks: 673/785 (85%)Erasing blocks: 674/785 (85%)Erasing blocks: 675/785 (85%)Erasing blocks: 676/785 (86%)Erasing blocks: 677/785 (86%)Erasing blocks: 678/785 (86%)Erasing blocks: 679/785 (86%)Erasing blocks: 680/785 (86%)Erasing blocks: 681/785 (86%)Erasing blocks: 682/785 (86%)Erasing blocks: 683/785 (87%)Erasing blocks: 684/785 (87%)Erasing blocks: 685/785 (87%)Erasing blocks: 686/785 (87%)Erasing blocks: 687/785 (87%)Erasing blocks: 688/785 (87%)Erasing blocks: 689/785 (87%)Erasing blocks: 690/785 (87%)Erasing blocks: 691/785 (88%)Erasing blocks: 692/785 (88%)Erasing blocks: 693/785 (88%)Erasing blocks: 694/785 (88%)Erasing blocks: 695/785 (88%)Erasing blocks: 696/785 (88%)Erasing blocks: 697/785 (88%)Erasing blocks: 698/785 (88%)Erasing blocks: 699/785 (89%)Erasing blocks: 700/785 (89%)Erasing blocks: 701/785 (89%)Erasing blocks: 702/785 (89%)Erasing blocks: 703/785 (89%)Erasing blocks: 704/785 (89%)Erasing blocks: 705/785 (89%)Erasing blocks: 706/785 (89%)Erasing blocks: 707/785 (90%)Erasing blocks: 708/785 (90%)Erasing blocks: 709/785 (90%)Erasing blocks: 710/785 (90%)Erasing blocks: 711/785 (90%)Erasing blocks: 712/785 (90%)Erasing blocks: 713/785 (90%)Erasing blocks: 714/785 (90%)Erasing blocks: 715/785 (91%)Erasing blocks: 716/785 (91%)Erasing blocks: 717/785 (91%)Erasing blocks: 718/785 (91%)Erasing blocks: 719/785 (91%)Erasing blocks: 720/785 (91%)Erasing blocks: 721/785 (91%)Erasing blocks: 722/785 (91%)Erasing blocks: 723/785 (92%)Erasing blocks: 724/785 (92%)Erasing blocks: 725/785 (92%)Erasing blocks: 726/785 (92%)Erasing blocks: 727/785 (92%)Erasing blocks: 728/785 (92%)Erasing blocks: 729/785 (92%)Erasing blocks: 730/785 (92%)Erasing blocks: 731/785 (93%)Erasing blocks: 732/785 (93%)Erasing blocks: 733/785 (93%)Erasing blocks: 734/785 (93%)Erasing blocks: 735/785 (93%)Erasing blocks: 736/785 (93%)Erasing blocks: 737/785 (93%)Erasing blocks: 738/785 (94%)Erasing blocks: 739/785 (94%)Erasing blocks: 740/785 (94%)Erasing blocks: 741/785 (94%)Erasing blocks: 742/785 (94%)Erasing blocks: 743/785 (94%)Erasing blocks: 744/785 (94%)Erasing blocks: 745/785 (94%)Erasing blocks: 746/785 (95%)Erasing blocks: 747/785 (95%)Erasing blocks: 748/785 (95%)Erasing blocks: 749/785 (95%)Erasing blocks: 750/785 (95%)Erasing blocks: 751/785 (95%)Erasing blocks: 752/785 (95%)Erasing blocks: 753/785 (95%)Erasing blocks: 754/785 (96%)Erasing blocks: 755/785 (96%)Erasing blocks: 756/785 (96%)Erasing blocks: 757/785 (96%)Erasing blocks: 758/785 (96%)Erasing blocks: 759/785 (96%)Erasing blocks: 760/785 (96%)Erasing blocks: 761/785 (96%)Erasing blocks: 762/785 (97%)Erasing blocks: 763/785 (97%)Erasing blocks: 764/785 (97%)Erasing blocks: 765/785 (97%)Erasing blocks: 766/785 (97%)Erasing blocks: 767/785 (97%)Erasing blocks: 768/785 (97%)Erasing blocks: 769/785 (97%)Erasing blocks: 770/785 (98%)Erasing blocks: 771/785 (98%)Erasing blocks: 772/785 (98%)Erasing blocks: 773/785 (98%)Erasing blocks: 774/785 (98%)Erasing blocks: 775/785 (98%)Erasing blocks: 776/785 (98%)Erasing blocks: 777/785 (98%)Erasing blocks: 778/785 (99%)Erasing blocks: 779/785 (99%)Erasing blocks: 780/785 (99%)Erasing blocks: 781/785 (99%)Erasing blocks: 782/785 (99%)Erasing blocks: 783/785 (99%)Erasing blocks: 784/785 (99%)Erasing blocks: 785/785 (100%)Erasing blocks: 785/785 (100%)
+Writing data: 0k/3139k (0%)Writing data: 10k/0k (3139%)Writing data: 20k/0k (3139%)Writing data: 30k/0k (3139%)Writing data: 40k/0k (3139%)Writing data: 50k/0k (3139%)Writing data: 60k/0k (3139%)Writing data: 70k/0k (3139%)Writing data: 80k/0k (3139%)Writing data: 90k/0k (3139%)Writing data: 100k/0k (3139%)Writing data: 110k/0k (3139%)Writing data: 120k/0k (3139%)Writing data: 130k/0k (3139%)Writing data: 140k/0k (3139%)Writing data: 150k/0k (3139%)Writing data: 160k/0k (3139%)Writing data: 170k/0k (3139%)Writing data: 180k/0k (3139%)Writing data: 190k/0k (3139%)Writing data: 200k/0k (3139%)Writing data: 210k/0k (3139%)Writing data: 220k/0k (3139%)Writing data: 230k/0k (3139%)Writing data: 240k/0k (3139%)Writing data: 250k/0k (3139%)Writing data: 260k/0k (3139%)Writing data: 270k/0k (3139%)Writing data: 280k/0k (3139%)Writing data: 290k/0k (3139%)Writing data: 300k/0k (3139%)Writing data: 310k/0k (3139%)Writing data: 320k/0k (3139%)Writing data: 330k/0k (3139%)Writing data: 340k/0k (3139%)Writing data: 350k/0k (3139%)Writing data: 360k/0k (3139%)Writing data: 370k/0k (3139%)Writing data: 380k/0k (3139%)Writing data: 390k/0k (3139%)Writing data: 400k/0k (3139%)Writing data: 410k/0k (3139%)Writing data: 420k/0k (3139%)Writing data: 430k/0k (3139%)Writing data: 440k/0k (3139%)Writing data: 450k/0k (3139%)Writing data: 460k/0k (3139%)Writing data: 470k/0k (3139%)Writing data: 480k/0k (3139%)Writing data: 490k/0k (3139%)Writing data: 500k/0k (3139%)Writing data: 510k/0k (3139%)Writing data: 520k/0k (3139%)Writing data: 530k/0k (3139%)Writing data: 540k/0k (3139%)Writing data: 550k/0k (3139%)Writing data: 560k/0k (3139%)Writing data: 570k/0k (3139%)Writing data: 580k/0k (3139%)Writing data: 590k/0k (3139%)Writing data: 600k/0k (3139%)Writing data: 610k/0k (3139%)Writing data: 620k/0k (3139%)Writing data: 630k/0k (3139%)Writing data: 640k/0k (3139%)Writing data: 650k/0k (3139%)Writing data: 660k/0k (3139%)Writing data: 670k/0k (3139%)Writing data: 680k/0k (3139%)Writing data: 690k/0k (3139%)Writing data: 700k/0k (3139%)Writing data: 710k/0k (3139%)Writing data: 720k/0k (3139%)Writing data: 730k/0k (3139%)Writing data: 740k/0k (3139%)Writing data: 750k/0k (3139%)Writing data: 760k/0k (3139%)Writing data: 770k/0k (3139%)Writing data: 780k/0k (3139%)Writing data: 790k/0k (3139%)Writing data: 800k/0k (3139%)Writing data: 810k/0k (3139%)Writing data: 820k/0k (3139%)Writing data: 830k/0k (3139%)Writing data: 840k/0k (3139%)Writing data: 850k/0k (3139%)Writing data: 860k/0k (3139%)Writing data: 870k/0k (3139%)Writing data: 880k/0k (3139%)Writing data: 890k/0k (3139%)Writing data: 900k/0k (3139%)Writing data: 910k/0k (3139%)Writing data: 920k/0k (3139%)Writing data: 930k/0k (3139%)Writing data: 940k/0k (3139%)Writing data: 950k/0k (3139%)Writing data: 960k/0k (3139%)Writing data: 970k/0k (3139%)Writing data: 980k/0k (3139%)Writing data: 990k/0k (3139%)Writing data: 1000k/0k (3139%)Writing data: 1010k/0k (3139%)Writing data: 1020k/0k (3139%)Writing data: 1030k/0k (3139%)Writing data: 1040k/0k (3139%)Writing data: 1050k/0k (3139%)Writing data: 1060k/0k (3139%)Writing data: 1070k/0k (3139%)Writing data: 1080k/0k (3139%)Writing data: 1090k/0k (3139%)Writing data: 1100k/0k (3139%)Writing data: 1110k/0k (3139%)Writing data: 1120k/0k (3139%)Writing data: 1130k/0k (3139%)Writing data: 1140k/0k (3139%)Writing data: 1150k/0k (3139%)Writing data: 1160k/0k (3139%)Writing data: 1170k/0k (3139%)Writing data: 1180k/0k (3139%)Writing data: 1190k/0k (3139%)Writing data: 1200k/0k (3139%)Writing data: 1210k/0k (3139%)Writing data: 1220k/0k (3139%)Writing data: 1230k/0k (3139%)Writing data: 1240k/0k (3139%)Writing data: 1250k/0k (3139%)Writing data: 1260k/0k (3139%)Writing data: 1270k/0k (3139%)Writing data: 1280k/0k (3139%)Writing data: 1290k/0k (3139%)Writing data: 1300k/0k (3139%)Writing data: 1310k/0k (3139%)Writing data: 1320k/0k (3139%)Writing data: 1330k/0k (3139%)Writing data: 1340k/0k (3139%)Writing data: 1350k/0k (3139%)Writing data: 1360k/0k (3139%)Writing data: 1370k/0k (3139%)Writing data: 1380k/0k (3139%)Writing data: 1390k/0k (3139%)Writing data: 1400k/0k (3139%)Writing data: 1410k/0k (3139%)Writing data: 1420k/0k (3139%)Writing data: 1430k/0k (3139%)Writing data: 1440k/0k (3139%)Writing data: 1450k/0k (3139%)Writing data: 1460k/0k (3139%)Writing data: 1470k/0k (3139%)Writing data: 1480k/0k (3139%)Writing data: 1490k/0k (3139%)Writing data: 1500k/0k (3139%)Writing data: 1510k/0k (3139%)Writing data: 1520k/0k (3139%)Writing data: 1530k/0k (3139%)Writing data: 1540k/0k (3139%)Writing data: 1550k/0k (3139%)Writing data: 1560k/0k (3139%)Writing data: 1570k/0k (3139%)Writing data: 1580k/0k (3139%)Writing data: 1590k/0k (3139%)Writing data: 1600k/0k (3139%)Writing data: 1610k/0k (3139%)Writing data: 1620k/0k (3139%)Writing data: 1630k/0k (3139%)Writing data: 1640k/0k (3139%)Writing data: 1650k/0k (3139%)Writing data: 1660k/0k (3139%)Writing data: 1670k/0k (3139%)Writing data: 1680k/0k (3139%)Writing data: 1690k/0k (3139%)Writing data: 1700k/0k (3139%)Writing data: 1710k/0k (3139%)Writing data: 1720k/0k (3139%)Writing data: 1730k/0k (3139%)Writing data: 1740k/0k (3139%)Writing data: 1750k/0k (3139%)Writing data: 1760k/0k (3139%)Writing data: 1770k/0k (3139%)Writing data: 1780k/0k (3139%)Writing data: 1790k/0k (3139%)Writing data: 1800k/0k (3139%)Writing data: 1810k/0k (3139%)Writing data: 1820k/0k (3139%)Writing data: 1830k/0k (3139%)Writing data: 1840k/0k (3139%)Writing data: 1850k/0k (3139%)Writing data: 1860k/0k (3139%)Writing data: 1870k/0k (3139%)Writing data: 1880k/0k (3139%)Writing data: 1890k/0k (3139%)Writing data: 1900k/0k (3139%)Writing data: 1910k/0k (3139%)Writing data: 1920k/0k (3139%)Writing data: 1930k/0k (3139%)Writing data: 1940k/0k (3139%)Writing data: 1950k/0k (3139%)Writing data: 1960k/0k (3139%)Writing data: 1970k/0k (3139%)Writing data: 1980k/0k (3139%)Writing data: 1990k/0k (3139%)Writing data: 2000k/0k (3139%)Writing data: 2010k/0k (3139%)Writing data: 2020k/0k (3139%)Writing data: 2030k/0k (3139%)Writing data: 2040k/0k (3139%)Writing data: 2050k/0k (3139%)Writing data: 2060k/0k (3139%)Writing data: 2070k/0k (3139%)Writing data: 2080k/0k (3139%)Writing data: 2090k/0k (3139%)Writing data: 2100k/0k (3139%)Writing data: 2110k/0k (3139%)Writing data: 2120k/0k (3139%)Writing data: 2130k/0k (3139%)Writing data: 2140k/0k (3139%)Writing data: 2150k/0k (3139%)Writing data: 2160k/0k (3139%)Writing data: 2170k/0k (3139%)Writing data: 2180k/0k (3139%)Writing data: 2190k/0k (3139%)Writing data: 2200k/0k (3139%)Writing data: 2210k/0k (3139%)Writing data: 2220k/0k (3139%)Writing data: 2230k/0k (3139%)Writing data: 2240k/0k (3139%)Writing data: 2250k/0k (3139%)Writing data: 2260k/0k (3139%)Writing data: 2270k/0k (3139%)Writing data: 2280k/0k (3139%)Writing data: 2290k/0k (3139%)Writing data: 2300k/0k (3139%)Writing data: 2310k/0k (3139%)Writing data: 2320k/0k (3139%)Writing data: 2330k/0k (3139%)Writing data: 2340k/0k (3139%)Writing data: 2350k/0k (3139%)Writing data: 2360k/0k (3139%)Writing data: 2370k/0k (3139%)Writing data: 2380k/0k (3139%)Writing data: 2390k/0k (3139%)Writing data: 2400k/0k (3139%)Writing data: 2410k/0k (3139%)Writing data: 2420k/0k (3139%)Writing data: 2430k/0k (3139%)Writing data: 2440k/0k (3139%)Writing data: 2450k/0k (3139%)Writing data: 2460k/0k (3139%)Writing data: 2470k/0k (3139%)Writing data: 2480k/0k (3139%)Writing data: 2490k/0k (3139%)Writing data: 2500k/0k (3139%)Writing data: 2510k/0k (3139%)Writing data: 2520k/0k (3139%)Writing data: 2530k/0k (3139%)Writing data: 2540k/0k (3139%)Writing data: 2550k/0k (3139%)Writing data: 2560k/0k (3139%)Writing data: 2570k/0k (3139%)Writing data: 2580k/0k (3139%)Writing data: 2590k/0k (3139%)Writing data: 2600k/0k (3139%)Writing data: 2610k/0k (3139%)Writing data: 2620k/0k (3139%)Writing data: 2630k/0k (3139%)Writing data: 2640k/0k (3139%)Writing data: 2650k/0k (3139%)Writing data: 2660k/0k (3139%)Writing data: 2670k/0k (3139%)Writing data: 2680k/0k (3139%)Writing data: 2690k/0k (3139%)Writing data: 2700k/0k (3139%)Writing data: 2710k/0k (3139%)Writing data: 2720k/0k (3139%)Writing data: 2730k/0k (3139%)Writing data: 2740k/0k (3139%)Writing data: 2750k/0k (3139%)Writing data: 2760k/0k (3139%)Writing data: 2770k/0k (3139%)Writing data: 2780k/0k (3139%)Writing data: 2790k/0k (3139%)Writing data: 2800k/0k (3139%)Writing data: 2810k/0k (3139%)Writing data: 2820k/0k (3139%)Writing data: 2830k/0k (3139%)Writing data: 2840k/0k (3139%)Writing data: 2850k/0k (3139%)Writing data: 2860k/0k (3139%)Writing data: 2870k/0k (3139%)Writing data: 2880k/0k (3139%)Writing data: 2890k/0k (3139%)Writing data: 2900k/0k (3139%)Writing data: 2910k/0k (3139%)Writing data: 2920k/0k (3139%)Writing data: 2930k/0k (3139%)Writing data: 2940k/0k (3139%)Writing data: 2950k/0k (3139%)Writing data: 2960k/0k (3139%)Writing data: 2970k/0k (3139%)Writing data: 2980k/0k (3139%)Writing data: 2990k/0k (3139%)Writing data: 3000k/0k (3139%)Writing data: 3010k/0k (3139%)Writing data: 3020k/0k (3139%)Writing data: 3030k/0k (3139%)Writing data: 3040k/0k (3139%)Writing data: 3050k/0k (3139%)Writing data: 3060k/0k (3139%)Writing data: 3070k/0k (3139%)Writing data: 3080k/0k (3139%)Writing data: 3090k/0k (3139%)Writing data: 3100k/0k (3139%)Writing data: 3110k/0k (3139%)Writing data: 3120k/0k (3139%)Writing data: 3130k/0k (3139%)Writing data: 3139k/0k (3139%)Writing data: 3139k/0k (100%)
+Verifying data: 0k/3139k (0%)Verifying data: 10k/0k (3139%)Verifying data: 20k/0k (3139%)Verifying data: 30k/0k (3139%)Verifying data: 40k/0k (3139%)Verifying data: 50k/0k (3139%)Verifying data: 60k/0k (3139%)Verifying data: 70k/0k (3139%)Verifying data: 80k/0k (3139%)Verifying data: 90k/0k (3139%)Verifying data: 100k/0k (3139%)Verifying data: 110k/0k (3139%)Verifying data: 120k/0k (3139%)Verifying data: 130k/0k (3139%)Verifying data: 140k/0k (3139%)Verifying data: 150k/0k (3139%)Verifying data: 160k/0k (3139%)Verifying data: 170k/0k (3139%)Verifying data: 180k/0k (3139%)Verifying data: 190k/0k (3139%)Verifying data: 200k/0k (3139%)Verifying data: 210k/0k (3139%)Verifying data: 220k/0k (3139%)Verifying data: 230k/0k (3139%)Verifying data: 240k/0k (3139%)Verifying data: 250k/0k (3139%)Verifying data: 260k/0k (3139%)Verifying data: 270k/0k (3139%)Verifying data: 280k/0k (3139%)Verifying data: 290k/0k (3139%)Verifying data: 300k/0k (3139%)Verifying data: 310k/0k (3139%)Verifying data: 320k/0k (3139%)Verifying data: 330k/0k (3139%)Verifying data: 340k/0k (3139%)Verifying data: 350k/0k (3139%)Verifying data: 360k/0k (3139%)Verifying data: 370k/0k (3139%)Verifying data: 380k/0k (3139%)Verifying data: 390k/0k (3139%)Verifying data: 400k/0k (3139%)Verifying data: 410k/0k (3139%)Verifying data: 420k/0k (3139%)Verifying data: 430k/0k (3139%)Verifying data: 440k/0k (3139%)Verifying data: 450k/0k (3139%)Verifying data: 460k/0k (3139%)Verifying data: 470k/0k (3139%)Verifying data: 480k/0k (3139%)Verifying data: 490k/0k (3139%)Verifying data: 500k/0k (3139%)Verifying data: 510k/0k (3139%)Verifying data: 520k/0k (3139%)Verifying data: 530k/0k (3139%)Verifying data: 540k/0k (3139%)Verifying data: 550k/0k (3139%)Verifying data: 560k/0k (3139%)Verifying data: 570k/0k (3139%)Verifying data: 580k/0k (3139%)Verifying data: 590k/0k (3139%)Verifying data: 600k/0k (3139%)Verifying data: 610k/0k (3139%)Verifying data: 620k/0k (3139%)Verifying data: 630k/0k (3139%)Verifying data: 640k/0k (3139%)Verifying data: 650k/0k (3139%)Verifying data: 660k/0k (3139%)Verifying data: 670k/0k (3139%)Verifying data: 680k/0k (3139%)Verifying data: 690k/0k (3139%)Verifying data: 700k/0k (3139%)Verifying data: 710k/0k (3139%)Verifying data: 720k/0k (3139%)Verifying data: 730k/0k (3139%)Verifying data: 740k/0k (3139%)Verifying data: 750k/0k (3139%)Verifying data: 760k/0k (3139%)Verifying data: 770k/0k (3139%)Verifying data: 780k/0k (3139%)Verifying data: 790k/0k (3139%)Verifying data: 800k/0k (3139%)Verifying data: 810k/0k (3139%)Verifying data: 820k/0k (3139%)Verifying data: 830k/0k (3139%)Verifying data: 840k/0k (3139%)Verifying data: 850k/0k (3139%)Verifying data: 860k/0k (3139%)Verifying data: 870k/0k (3139%)Verifying data: 880k/0k (3139%)Verifying data: 890k/0k (3139%)Verifying data: 900k/0k (3139%)Verifying data: 910k/0k (3139%)Verifying data: 920k/0k (3139%)Verifying data: 930k/0k (3139%)Verifying data: 940k/0k (3139%)Verifying data: 950k/0k (3139%)Verifying data: 960k/0k (3139%)Verifying data: 970k/0k (3139%)Verifying data: 980k/0k (3139%)Verifying data: 990k/0k (3139%)Verifying data: 1000k/0k (3139%)Verifying data: 1010k/0k (3139%)Verifying data: 1020k/0k (3139%)Verifying data: 1030k/0k (3139%)Verifying data: 1040k/0k (3139%)Verifying data: 1050k/0k (3139%)Verifying data: 1060k/0k (3139%)Verifying data: 1070k/0k (3139%)Verifying data: 1080k/0k (3139%)Verifying data: 1090k/0k (3139%)Verifying data: 1100k/0k (3139%)Verifying data: 1110k/0k (3139%)Verifying data: 1120k/0k (3139%)Verifying data: 1130k/0k (3139%)Verifying data: 1140k/0k (3139%)Verifying data: 1150k/0k (3139%)Verifying data: 1160k/0k (3139%)Verifying data: 1170k/0k (3139%)Verifying data: 1180k/0k (3139%)Verifying data: 1190k/0k (3139%)Verifying data: 1200k/0k (3139%)Verifying data: 1210k/0k (3139%)Verifying data: 1220k/0k (3139%)Verifying data: 1230k/0k (3139%)Verifying data: 1240k/0k (3139%)Verifying data: 1250k/0k (3139%)Verifying data: 1260k/0k (3139%)Verifying data: 1270k/0k (3139%)Verifying data: 1280k/0k (3139%)Verifying data: 1290k/0k (3139%)Verifying data: 1300k/0k (3139%)Verifying data: 1310k/0k (3139%)Verifying data: 1320k/0k (3139%)Verifying data: 1330k/0k (3139%)Verifying data: 1340k/0k (3139%)Verifying data: 1350k/0k (3139%)Verifying data: 1360k/0k (3139%)Verifying data: 1370k/0k (3139%)Verifying data: 1380k/0k (3139%)Verifying data: 1390k/0k (3139%)Verifying data: 1400k/0k (3139%)Verifying data: 1410k/0k (3139%)Verifying data: 1420k/0k (3139%)Verifying data: 1430k/0k (3139%)Verifying data: 1440k/0k (3139%)Verifying data: 1450k/0k (3139%)Verifying data: 1460k/0k (3139%)Verifying data: 1470k/0k (3139%)Verifying data: 1480k/0k (3139%)Verifying data: 1490k/0k (3139%)Verifying data: 1500k/0k (3139%)Verifying data: 1510k/0k (3139%)Verifying data: 1520k/0k (3139%)Verifying data: 1530k/0k (3139%)Verifying data: 1540k/0k (3139%)Verifying data: 1550k/0k (3139%)Verifying data: 1560k/0k (3139%)Verifying data: 1570k/0k (3139%)Verifying data: 1580k/0k (3139%)Verifying data: 1590k/0k (3139%)Verifying data: 1600k/0k (3139%)Verifying data: 1610k/0k (3139%)Verifying data: 1620k/0k (3139%)Verifying data: 1630k/0k (3139%)Verifying data: 1640k/0k (3139%)Verifying data: 1650k/0k (3139%)Verifying data: 1660k/0k (3139%)Verifying data: 1670k/0k (3139%)Verifying data: 1680k/0k (3139%)Verifying data: 1690k/0k (3139%)Verifying data: 1700k/0k (3139%)Verifying data: 1710k/0k (3139%)Verifying data: 1720k/0k (3139%)Verifying data: 1730k/0k (3139%)Verifying data: 1740k/0k (3139%)Verifying data: 1750k/0k (3139%)Verifying data: 1760k/0k (3139%)Verifying data: 1770k/0k (3139%)Verifying data: 1780k/0k (3139%)Verifying data: 1790k/0k (3139%)Verifying data: 1800k/0k (3139%)Verifying data: 1810k/0k (3139%)Verifying data: 1820k/0k (3139%)Verifying data: 1830k/0k (3139%)Verifying data: 1840k/0k (3139%)Verifying data: 1850k/0k (3139%)Verifying data: 1860k/0k (3139%)Verifying data: 1870k/0k (3139%)Verifying data: 1880k/0k (3139%)Verifying data: 1890k/0k (3139%)Verifying data: 1900k/0k (3139%)Verifying data: 1910k/0k (3139%)Verifying data: 1920k/0k (3139%)Verifying data: 1930k/0k (3139%)Verifying data: 1940k/0k (3139%)Verifying data: 1950k/0k (3139%)Verifying data: 1960k/0k (3139%)Verifying data: 1970k/0k (3139%)Verifying data: 1980k/0k (3139%)Verifying data: 1990k/0k (3139%)Verifying data: 2000k/0k (3139%)Verifying data: 2010k/0k (3139%)Verifying data: 2020k/0k (3139%)Verifying data: 2030k/0k (3139%)Verifying data: 2040k/0k (3139%)Verifying data: 2050k/0k (3139%)Verifying data: 2060k/0k (3139%)Verifying data: 2070k/0k (3139%)Verifying data: 2080k/0k (3139%)Verifying data: 2090k/0k (3139%)Verifying data: 2100k/0k (3139%)Verifying data: 2110k/0k (3139%)Verifying data: 2120k/0k (3139%)Verifying data: 2130k/0k (3139%)Verifying data: 2140k/0k (3139%)Verifying data: 2150k/0k (3139%)Verifying data: 2160k/0k (3139%)Verifying data: 2170k/0k (3139%)Verifying data: 2180k/0k (3139%)Verifying data: 2190k/0k (3139%)Verifying data: 2200k/0k (3139%)Verifying data: 2210k/0k (3139%)Verifying data: 2220k/0k (3139%)Verifying data: 2230k/0k (3139%)Verifying data: 2240k/0k (3139%)Verifying data: 2250k/0k (3139%)Verifying data: 2260k/0k (3139%)Verifying data: 2270k/0k (3139%)Verifying data: 2280k/0k (3139%)Verifying data: 2290k/0k (3139%)Verifying data: 2300k/0k (3139%)Verifying data: 2310k/0k (3139%)Verifying data: 2320k/0k (3139%)Verifying data: 2330k/0k (3139%)Verifying data: 2340k/0k (3139%)Verifying data: 2350k/0k (3139%)Verifying data: 2360k/0k (3139%)Verifying data: 2370k/0k (3139%)Verifying data: 2380k/0k (3139%)Verifying data: 2390k/0k (3139%)Verifying data: 2400k/0k (3139%)Verifying data: 2410k/0k (3139%)Verifying data: 2420k/0k (3139%)Verifying data: 2430k/0k (3139%)Verifying data: 2440k/0k (3139%)Verifying data: 2450k/0k (3139%)Verifying data: 2460k/0k (3139%)Verifying data: 2470k/0k (3139%)Verifying data: 2480k/0k (3139%)Verifying data: 2490k/0k (3139%)Verifying data: 2500k/0k (3139%)Verifying data: 2510k/0k (3139%)Verifying data: 2520k/0k (3139%)Verifying data: 2530k/0k (3139%)Verifying data: 2540k/0k (3139%)Verifying data: 2550k/0k (3139%)Verifying data: 2560k/0k (3139%)Verifying data: 2570k/0k (3139%)Verifying data: 2580k/0k (3139%)Verifying data: 2590k/0k (3139%)Verifying data: 2600k/0k (3139%)Verifying data: 2610k/0k (3139%)Verifying data: 2620k/0k (3139%)Verifying data: 2630k/0k (3139%)Verifying data: 2640k/0k (3139%)Verifying data: 2650k/0k (3139%)Verifying data: 2660k/0k (3139%)Verifying data: 2670k/0k (3139%)Verifying data: 2680k/0k (3139%)Verifying data: 2690k/0k (3139%)Verifying data: 2700k/0k (3139%)Verifying data: 2710k/0k (3139%)Verifying data: 2720k/0k (3139%)Verifying data: 2730k/0k (3139%)Verifying data: 2740k/0k (3139%)Verifying data: 2750k/0k (3139%)Verifying data: 2760k/0k (3139%)Verifying data: 2770k/0k (3139%)Verifying data: 2780k/0k (3139%)Verifying data: 2790k/0k (3139%)Verifying data: 2800k/0k (3139%)Verifying data: 2810k/0k (3139%)Verifying data: 2820k/0k (3139%)Verifying data: 2830k/0k (3139%)Verifying data: 2840k/0k (3139%)Verifying data: 2850k/0k (3139%)Verifying data: 2860k/0k (3139%)Verifying data: 2870k/0k (3139%)Verifying data: 2880k/0k (3139%)Verifying data: 2890k/0k (3139%)Verifying data: 2900k/0k (3139%)Verifying data: 2910k/0k (3139%)Verifying data: 2920k/0k (3139%)Verifying data: 2930k/0k (3139%)Verifying data: 2940k/0k (3139%)Verifying data: 2950k/0k (3139%)Verifying data: 2960k/0k (3139%)Verifying data: 2970k/0k (3139%)Verifying data: 2980k/0k (3139%)Verifying data: 2990k/0k (3139%)Verifying data: 3000k/0k (3139%)Verifying data: 3010k/0k (3139%)Verifying data: 3020k/0k (3139%)Verifying data: 3030k/0k (3139%)Verifying data: 3040k/0k (3139%)Verifying data: 3050k/0k (3139%)Verifying data: 3060k/0k (3139%)Verifying data: 3070k/0k (3139%)Verifying data: 3080k/0k (3139%)Verifying data: 3090k/0k (3139%)Verifying data: 3100k/0k (3139%)Verifying data: 3110k/0k (3139%)Verifying data: 3120k/0k (3139%)Verifying data: 3130k/0k (3139%)Verifying data: 3139k/0k (3139%)Verifying data: 3139k/0k (100%)
+flash NOR SUCCESS
+-----OK -> Flashing /media/actia/verified-images/uImage-tgur-access-c1.bin.signed on dev:/dev/ubi1_0
+-----OK -> NOR_UPDATE SUCCESS
+Erasing blocks: 0/13 (0%)Erasing blocks: 1/13 (7%)Erasing blocks: 2/13 (15%)Erasing blocks: 3/13 (23%)Erasing blocks: 4/13 (30%)Erasing blocks: 5/13 (38%)Erasing blocks: 6/13 (46%)Erasing blocks: 7/13 (53%)Erasing blocks: 8/13 (61%)Erasing blocks: 9/13 (69%)Erasing blocks: 10/13 (76%)Erasing blocks: 11/13 (84%)Erasing blocks: 12/13 (92%)Erasing blocks: 13/13 (100%)Erasing blocks: 13/13 (100%)
+Writing data: 0k/49k (0%)Writing data: 10k/0k (49%)Writing data: 20k/0k (49%)Writing data: 30k/0k (49%)Writing data: 40k/0k (49%)Writing data: 49k/0k (49%)Writing data: 49k/0k (100%)
+Verifying data: 0k/49k (0%)Verifying data: 10k/0k (49%)Verifying data: 20k/0k (49%)Verifying data: 30k/0k (49%)Verifying data: 40k/0k (49%)Verifying data: 49k/0k (49%)Verifying data: 49k/0k (100%)
+-----OK -> Flashing /media/actia/verified-images/uImage-imx6s-tgur-access-b1.dtb.signed on dev:/dev/mtd7
+-----OK -> Flashing /media/actia/verified-images/tgur-access-image-UBIFS: background thread "ubifs_bgt0_1" started, PID 517
+base-tgur-access-c1-20180308114151.rootfs.ubifs on dev:/dev/ubi0_0
+UBIFS: mounted UBI device 0, volume 1, name "apps"
+UBIFS: LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+UBIFS: FS size: 40759296 bytes (38 MiB, 321 LEBs), journal size 2031616 bytes (1 MiB, 16 LEBs)
+UBIFS: reserved for root: 1925161 bytes (1880 KiB)
+UBIFS: media format: w4/r0 (latest is w4/r0), UUID DCBF8CDD-5ED2-4A72-981A-3F3E3CE64A7D, small LPT model
+-----OK -> Mount ubi0:apps on /media/apps
+com.actia.sysmgr/
+com.actia.sysmgr/core
+com.actia.sysmgr/sysmgr
+com.actia.sysmgr/.keep
+com.actia.sysmgr.json
+demoapps/
+demoapps/watchdog_demo
+demoapps/wifi_ap_demo
+demoapps/modemdebug_demo
+demoapps/status_demo
+demoapps/modem_demo
+demoapps/config_demo
+demoapps/gnss_demo
+demoapps/wifi_client_demo
+demoapps/usb_demo
+demoapps/bluetooth_app
+demoapps/power_demo
+demoapps/bluetooth_demo
+demoapps/onewire_demo
+demoapps/uds_demo
+demoapps/can_demo
+demoapps/digital_io_demo
+demoapps/firewall_demo
+demoapps/ethernet_demo
+demoapps/diag_demo
+demoapps/swupdate_demo
+demoapps/security_demo
+demoapps/lin_demo
+demoapps/wakeup_demo
+version.customer
+-----OK -> Flashing /media/actia/verified-images/internal_software.tgz in directory ubi0:apps
+UBIFS: un-mount UBI device 0, volume 1
+UBIFS: background thread "ubifs_bgt0_1" stops
+-----OK -> Umount /media/apps
+UBIFS: background thread "ubifs_bgt0_2" started, PID 526
+UBIFS: mounted UBI device 0, volume 2, name "data"
+UBIFS: LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+UBIFS: FS size: 54091776 bytes (51 MiB, 426 LEBs), journal size 2666496 bytes (2 MiB, 21 LEBs)
+UBIFS: reserved for root: 2554887 bytes (2495 KiB)
+UBIFS: media format: w4/r0 (latest is w4/r0), UUID E8638268-4CC2-4DED-B14F-05EE8D8F8CEE, small LPT model
+-----OK -> Erasing files in directory: /media/data_current
+UBIFS: un-mount UBI device 0, volume 2
+UBIFS: background thread "ubifs_bgt0_2" stops
+-----OK -> Umount /media/data_current
+UBIFS: background thread "ubifs_bgt0_2" started, PID 533
+UBIFS: mounted UBI device 0, volume 2, name "data"
+UBIFS: LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+UBIFS: FS size: 54091776 bytes (51 MiB, 426 LEBs), journal size 2666496 bytes (2 MiB, 21 LEBs)
+UBIFS: reserved for root: 2554887 bytes (2495 KiB)
+UBIFS: media format: w4/r0 (latest is w4/r0), UUID E8638268-4CC2-4DED-B14F-05EE8D8F8CEE, small LPT model
+-----OK -> Mount ubi0:data on /media/data_current
+-----OK -> Flashing /media/actia/verified-images/data.tgz in directory ubi0:data
+UBIFS: un-mount UBI device 0, volume 2
+UBIFS: background thread "ubifs_bgt0_2" stops
+-----OK -> Umount /media/data_current
+UBI: detaching mtd0 from ubi0
+UBI: mtd0 is detached from ubi0
+UBI: detaching mtd1 from ubi1
+UBI: mtd1 is detached from ubi1
+-----OK -> GPS_UPDATE not to do
+Apply versions from: /media/actia/downloaded-images/UpdateVersion
+EXT4-fs (mmcblk0p5): mounted filesystem with ordered data mode. Opts: (null)
+-----OK -> Mount /dev/mmcblk0p5 /media/actia/parameters-part
+CONFIG_FILE: /media/actia/downloaded-images/UpdateVersion
+UPDATE_MODE: 
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+(null):0 - file I/O error
+-----OK -> Versions written
+writing 0 in SNVS_LGPR
+ set Nb_try=0
+-----Update well finished
+Reboot system
+/media/actia/parameters-part already unmounted
+/media/actia/verified-images already unmounted
+/media/actia/downloaded-images already unmounted
+/media/actia/golden-images already unmounted
+/media/data_previous already unmounted
+/media/usb already unmounted
+ubidetach: error!: cannot detach mtd0
+           error 19 (No such device)
+/media/apps already unmounted
+/media/data_current already unmounted
+Rebooting system with CCPU reboot
+0
+Stop kicking the watchdog
+EXT4-fs (mmcblk0p5): mounted filesystem with ordered data mode. Opts: (null)
+END SCRIPT
+L
+
+U-Boot 2014.07 (Mar 08 2018 - 11:03:39)
+
+CPU:   Freescale i.MX6SOLO rev1.3 at 792 MHz
+Reset cause: POR
+Board: TGU-R Access-mx6solo
+Ver:   ACTIA-Pamela-
+DRAM:  512 MiB
+NAND:  256 MiB
+SF: Detected W25Q256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
+In:    serial
+Out:   serial
+Err:   serial
+Normal Boot
+Net:   FEC [PRIME]
+Hit any key to stop autoboot:  0 
+020cc068: 00000000                               ....
+------START SYSTEM ------
+SF: Detected W25Q256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
+SF: 131072 bytes @ 0x100000 Read: OK
+Read 5242880 bytes from volume kernel to 10007fc0
+## Booting kernel from Legacy Image at 10007fc0 ...
+   Image Name:   Linux-3.10.17-rt12+pamela-dual-l
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    3208472 Bytes = 3.1 MiB
+   Load Address: 10008000
+   Entry Point:  10008000
+   Authenticate image from DDR location 0x10007fc0 ... Check CSF for Write Data command before authenticating image
+OK
+
+Secure boot disabled
+
+HAB Configuration: 0xf0, HAB State: 0x66
+No HAB Events Found!
+
+   Verifying Checksum ... OK
+## Flattened Device Tree blob at 18000000
+   Booting using the fdt blob at 0x18000000
+   Authenticate image from DDR location 0x18000000 ... Check CSF for Write Data command before authenticating image
+OK
+
+Secure boot disabled
+
+HAB Configuration: 0xf0, HAB State: 0x66
+No HAB Events Found!
+
+   XIP Kernel Image ... OK
+   Using Device Tree in place at 18000000, end 1800dbdc
+
+Starting kernel ...
+
+
+Generic Actia Distribution 1.0.0 tgur-access ttymxc0
+
+tgur-access login: root
+Password: 
+root@tgur-access:~# dbus-send --session --print-reply --dest=com.actia.platform. system /com/actia/platform/system/info  com.actia.platform.system.info.GetCpuVer sions
+method return sender=:1.12 -> dest=:1.16 reply_serial=2
+   string "Version: 1.0.0.3 Product_ref: P110172 Product_name: TGUR-ACC CCPU Boot Product_copyright: @ACTIA Build_date: Dec  6 2017 Build_time: 09:47:03"
+   string "Version: 1.0.1.0 Product_ref: P110182 Product_name: TGUR-ACC CCPU Bsp Product_copyright: @ACTIA Build_date: Feb  5 2018 Build_time: 20:24:19"
+   string "Version: 1.0.1.5 Product_ref: P110173 Product_name: TGUR-ACC CCPU App Product_copyright: @ACTIA Build_date: Feb  5 2018 Build_time: 20:24:37"
+   string "Version: 1.0.2.0 Product_ref: P110174 Product_name: TGUR-ACC Cal V1 Product_copyright: @ACTIA Build_date: Jan  4 2018 Build_time: 20:50:06"
+   string "Version: 0.0.0.33"
+   string "Version: 0.0.0.38"
+   string "Error: version not available"
+   string "meta-actia-bsp			 13b1153"
+   string "meta-actia-distro			 6cb16e4"
+   string "meta-acp-core			 e6f3e52"
+   string "meta-acp-update			 71ec860"
+   string "meta-tgur-access			 c348e55"
+root@tgur-access:~# dbus-send --session --print-reply --dest=com.actia.platform. system /com/actia/platform/system/swupdate com.actia.platform.system.swupdate.In itiateVerifySystem
+Error com.actia.platform.system.swupdate.Error.SystemAlreadyVerified: System is already verified
+root@tgur-access:~# dbus-send --session --print-reply --dest=com.actia.platform. system /com/actia/platform/system/swupdate com.actia.platform.system.swupdate.In itiateUpdate string:"/media/mount/sda1/R9.3-tgur-access-image-base-tgur-access-c 1.firmware" string:"/media/mount/sda1/R9.3-tgur-access-image-base-tgur-access-c1 .sysimage" string:""
+method return sender=:1.12 -> dest=:1.21 reply_serial=2
+root@tgur-access:~# 
